@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/widgets/button.dart';
-import 'package:flutter_application_1/features/auth/components/PasswordField.dart';
-import 'package:flutter_application_1/features/auth/forgot_password.dart';
+import 'package:SalesMo/components/widgets/button.dart';
+import 'package:SalesMo/features/auth/components/PasswordField.dart';
+import 'package:SalesMo/features/auth/login.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter_application_1/features/auth/login.dart';
+import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

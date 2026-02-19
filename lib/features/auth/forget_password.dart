@@ -1,16 +1,18 @@
-import 'package:SalesMo/core/theme/color.dart';
-import 'package:flutter/material.dart';
 import 'package:SalesMo/components/widgets/button.dart';
+import 'package:SalesMo/core/theme/color.dart';
+import 'package:SalesMo/features/auth/otp.dart';
+import 'package:flutter/material.dart';
 
-class ForgotPasswordPage extends StatefulWidget {
-  const ForgotPasswordPage({super.key});
+class ForgetPasswordPage extends StatefulWidget {
+  const ForgetPasswordPage({super.key});
 
   @override
-  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
+  State<ForgetPasswordPage> createState() => _ForgetPasswordPageState();
 }
 
-class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
-  @override
+class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,14 +21,13 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Title
               const Text(
-                'Forgot Password',
+                'Forget Password',
                 style: TextStyle(
-                  fontSize: 32,
-                  color: AppColors.primaryDark,
+                  fontSize: 42,
+                  color: AppColors.textPrimary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -35,7 +36,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
               const Text(
                 'Enter your email to receive reset link',
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                style: TextStyle(fontSize: 14, color: AppColors.textSecondary),
               ),
 
               const SizedBox(height: 30),
@@ -59,18 +60,15 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               SizedBox(
                 width: double.infinity,
                 height: 50,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    "Send Reset Link",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
-                  ),
+                child: Button(
+                  text: "Send Reset Link",
+                  textStyle: const TextStyle(fontSize: 18),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const OtpPage()),
+                    );
+                  },
                 ),
               ),
             ],

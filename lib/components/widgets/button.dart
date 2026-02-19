@@ -8,6 +8,7 @@ class Button extends StatelessWidget {
   final Color? color;
   final bool fullWidth;
   final bool outlined;
+  final TextStyle? textStyle;
 
   const Button({
     super.key,
@@ -17,6 +18,7 @@ class Button extends StatelessWidget {
     this.color,
     this.fullWidth = false,
     this.outlined = false,
+    this.textStyle,
   });
 
   @override
@@ -40,7 +42,12 @@ class Button extends StatelessWidget {
         ),
         child: isLoading
             ? const CircularProgressIndicator(color: Colors.white)
-            : Text(text),
+            : Text(
+                text,
+                style:
+                    textStyle ??
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+              ),
       ),
     );
   }

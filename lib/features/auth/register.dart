@@ -57,7 +57,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ),
             SizedBox(height: 20),
-            SizedBox(width: 350, child: PasswordField()),
+            SizedBox(width: 350, child: PasswordField(label: "Password")),
             SizedBox(height: 20),
             SizedBox(
               width: 350,

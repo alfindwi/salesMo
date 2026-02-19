@@ -1,9 +1,9 @@
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import 'package:SalesMo/components/widgets/button.dart';
 import 'package:SalesMo/features/auth/components/PasswordField.dart';
-import 'package:SalesMo/features/auth/forgot_password.dart';
+import 'package:SalesMo/features/auth/forget_password.dart';
 import 'package:SalesMo/features/auth/register.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             SizedBox(height: 20),
-            SizedBox(width: 350, child: PasswordField()),
+            SizedBox(width: 350, child: PasswordField(label: "Password")),
             SizedBox(
               width: 350,
               child: Align(
@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => const ForgotPasswordPage(),
+                        builder: (_) => const ForgetPasswordPage(),
                       ),
                     );
                   },
@@ -67,12 +67,12 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 5),
             SizedBox(
               width: 350,
               child: Button(text: "Login", onPressed: () {}),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             SizedBox(
               width: 350,
               child: Align(

@@ -1,4 +1,5 @@
 import 'package:SalesMo/components/widgets/button.dart';
+import 'package:SalesMo/components/widgets/input.dart';
 import 'package:SalesMo/core/theme/color.dart';
 import 'package:SalesMo/features/auth/otp.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +12,6 @@ class ForgetPasswordPage extends StatefulWidget {
 }
 
 class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,17 +40,11 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
 
               const SizedBox(height: 30),
 
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Email",
-                  hintText: "example@email.com",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 18,
-                  ),
+              SizedBox(
+                width: double.infinity,
+                child: Input(
+                  placeholder: "Email",
+                  keyboardType: TextInputType.emailAddress,
                 ),
               ),
 

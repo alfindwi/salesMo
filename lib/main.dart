@@ -1,6 +1,6 @@
+import 'package:SalesMo/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'features/auth/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,54 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ShadApp(home: WelcomeScreen());
-  }
-}
-
-class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({super.key});
-
-  @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
-}
-
-class _WelcomeScreenState extends State<WelcomeScreen> {
-  @override
-  void initState() {
-    super.initState();
-
-    Future.delayed(const Duration(seconds: 4), () {
-      if (!mounted) return;
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginPage()),
-      );
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SizedBox.expand(
-        child: Container(
-          color: const Color(0xFFF0D561),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Image(image: AssetImage('assets/images/iconsalesmo.png')),
-              SizedBox(height: 20),
-              Text(
-                'salesMo',
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+    return ShadApp(
+      theme: ShadThemeData(textTheme: ShadTextTheme(family: 'Inter')),
+      home: const SplashScreen(),
     );
   }
 }

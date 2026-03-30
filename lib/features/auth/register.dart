@@ -1,4 +1,5 @@
 import 'package:SalesMo/components/widgets/button.dart';
+import 'package:SalesMo/components/widgets/input.dart';
 import 'package:SalesMo/features/auth/components/PasswordField.dart';
 import 'package:SalesMo/features/auth/login.dart';
 import 'package:flutter/gestures.dart';
@@ -35,29 +36,21 @@ class _RegisterPageState extends State<RegisterPage> {
             SizedBox(height: 20),
             SizedBox(
               width: 350,
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: "Email",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
-                ),
+              child: Input(
+                placeholder: "Email",
+                keyboardType: TextInputType.emailAddress,
               ),
             ),
             SizedBox(height: 20),
             SizedBox(
               width: 350,
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: "Username",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
-                ),
+              child: Input(
+                placeholder: "Username",
+                keyboardType: TextInputType.text,
               ),
             ),
             SizedBox(height: 20),
-            SizedBox(width: 350, child: PasswordField(label: "Password")),
+            SizedBox(width: 350, child: PasswordInput()),
             SizedBox(height: 20),
             SizedBox(
               width: 350,

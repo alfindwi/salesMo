@@ -1,7 +1,9 @@
 import 'package:SalesMo/components/widgets/button.dart';
+import 'package:SalesMo/components/widgets/input.dart';
 import 'package:SalesMo/features/auth/components/PasswordField.dart';
 import 'package:SalesMo/features/auth/forget_password.dart';
 import 'package:SalesMo/features/auth/register.dart';
+import 'package:SalesMo/features/dashboard/dashboard.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
             Text(
               'Sign in',
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 32,
                 fontWeight: FontWeight.bold,
                 color: const Color(0xFF333333),
               ),
@@ -36,17 +38,13 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(height: 20),
             SizedBox(
               width: 350,
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: "Email/Username",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
-                ),
+              child: Input(
+                placeholder: "Email",
+                keyboardType: TextInputType.emailAddress,
               ),
             ),
             SizedBox(height: 20),
-            SizedBox(width: 350, child: PasswordField(label: "Password")),
+            SizedBox(width: 350, child: PasswordInput()),
             SizedBox(
               width: 350,
               child: Align(
@@ -70,7 +68,15 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(height: 5),
             SizedBox(
               width: 350,
-              child: Button(text: "Login", onPressed: () {}),
+              child: Button(
+                text: "Login",
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Dashboard()),
+                  );
+                },
+              ),
             ),
             SizedBox(height: 10),
             SizedBox(

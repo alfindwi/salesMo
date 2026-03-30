@@ -40,9 +40,15 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
 
               const SizedBox(height: 30),
 
-              SizedBox(width: double.infinity, child: PasswordField(label: "New Password")),
+              SizedBox(
+                width: double.infinity,
+                child: PasswordInput(),
+              ),
               const SizedBox(height: 16),
-              SizedBox(width: double.infinity, child: PasswordField(label: "Confirm Password")),
+              SizedBox(
+                width: double.infinity,
+                child: PasswordInput(),
+              ),
 
               const SizedBox(height: 24),
 

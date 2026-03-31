@@ -37,6 +37,7 @@ dependencies:
   pinput: ^5.0.0
   shadcn_ui: ^0.46.1
   flutter_lucide: ^1.8.2
+  hugeicons: ^1.1.0
 
 dev_dependencies:
   flutter_test:

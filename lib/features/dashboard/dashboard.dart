@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -8,6 +9,8 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  bool obscure = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,12 +87,49 @@ class _DashboardState extends State<Dashboard> {
                 BoxShadow(blurRadius: 10, offset: const Offset(0, 2)),
               ],
             ),
-            child: Text(
-              'Rp. 1.000.000',
-              style: TextStyle(
-                fontSize: 24,
-                color: Colors.grey[600],
-                fontWeight: FontWeight.bold,
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Row(
+                children: [
+                  Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Rp. ',
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: const Color(0xFF333333),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: obscure ? '••••••••••' : '1.000.000', // ganti titik titik sesuai dengan jumlah digit nominal
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: const Color(0xFF333333),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  IconButton(
+                    icon: obscure
+                        ? HugeIcon(
+                            icon: HugeIcons.strokeRoundedViewOff,
+                            color: Colors.black,
+                            size: 25,
+                          )
+                        : HugeIcon(
+                            icon: HugeIcons.strokeRoundedView,
+                            color: Colors.black,
+                            size: 25,
+                          ),
+                    onPressed: () {
+                      setState(() => obscure = !obscure);
+                    },
+                  ),
+                ],
               ),
             ),
           ),

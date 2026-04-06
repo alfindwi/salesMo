@@ -2,10 +2,9 @@ import 'package:SalesMo/components/widgets/button.dart';
 import 'package:SalesMo/components/widgets/input.dart';
 import 'package:SalesMo/features/auth/components/PasswordField.dart';
 import 'package:SalesMo/features/auth/forget_password.dart';
-import 'package:SalesMo/features/auth/register.dart';
-import 'package:SalesMo/features/dashboard/dashboard.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -71,10 +70,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Button(
                 text: "Login",
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Dashboard()),
-                  );
+                  context.go('/dashboard');
                 },
               ),
             ),
@@ -96,12 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const RegisterPage(),
-                              ),
-                            );
+                            context.go('/register');
                           },
                       ),
                     ],

@@ -38,6 +38,8 @@ dependencies:
   shadcn_ui: ^0.46.1
   flutter_lucide: ^1.8.2
   hugeicons: ^1.1.0
+  go_router: ^17.1.0
+  image_picker: ^1.0.7
 
 dev_dependencies:
   flutter_test:

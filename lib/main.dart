@@ -1,4 +1,4 @@
-import 'package:SalesMo/features/splash/splash_screen.dart';
+import 'package:SalesMo/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ShadApp(
+    return ShadApp.router(
       theme: ShadThemeData(textTheme: ShadTextTheme(family: 'Inter')),
-      home: const SplashScreen(),
+      routerConfig: router,
     );
   }
 }

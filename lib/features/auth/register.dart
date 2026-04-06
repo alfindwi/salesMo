@@ -1,7 +1,7 @@
 import 'package:SalesMo/components/widgets/button.dart';
 import 'package:SalesMo/components/widgets/input.dart';
 import 'package:SalesMo/features/auth/components/PasswordField.dart';
-import 'package:SalesMo/features/auth/login.dart';
+import 'package:SalesMo/features/auth/login_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

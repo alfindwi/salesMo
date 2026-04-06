@@ -1,15 +1,13 @@
+import 'package:SalesMo/components/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 
-class MainLayout extends StatefulWidget {
-  const MainLayout({super.key});
+class MainLayout extends StatelessWidget {
+  final Widget child;
 
-  @override
-  State<MainLayout> createState() => MainLayoutState();
-}
+  const MainLayout({super.key, required this.child});
 
-class MainLayoutState extends State<MainLayout> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(body: child, bottomNavigationBar: BottomNavbar());
   }
 }

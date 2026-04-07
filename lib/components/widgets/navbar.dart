@@ -76,7 +76,7 @@ class BottomNavbar extends StatelessWidget {
         Positioned(
           bottom: 35,
           child: GestureDetector(
-            onTap: () => context.go('/split-bill'),
+            onTap: () => context.push('/split-bill'),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -102,7 +102,6 @@ class BottomNavbar extends StatelessWidget {
 
                 const SizedBox(height: 4),
 
-                // 🔥 TEXT QR
                 Text(
                   "SPLIT",
                   style: TextStyle(

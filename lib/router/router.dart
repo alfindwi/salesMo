@@ -6,6 +6,7 @@ import 'package:SalesMo/features/dashboard/dashboard_page.dart';
 import 'package:SalesMo/features/history/history_page.dart';
 import 'package:SalesMo/features/profile/profile_page.dart';
 import 'package:SalesMo/features/splash/splash_screen.dart';
+import 'package:SalesMo/features/split_bill/split_bill_page.dart';
 import 'package:SalesMo/features/stats/stats_page.dart';
 import 'package:SalesMo/layout/mainLayout.dart';
 import 'package:go_router/go_router.dart';
@@ -20,6 +21,7 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(path: '/otp', builder: (context, state) => OtpPage()),
     GoRoute(path: '/', builder: (context, state) => SplashScreen()),
+    GoRoute(path: '/split-bill', builder: (context, state) => SplitBillPage()),
 
     ShellRoute(
       builder: (context, state, child) {
